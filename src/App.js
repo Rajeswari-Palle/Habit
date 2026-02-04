@@ -4,6 +4,7 @@ import store from "./store/store.ts";
 import { Container, Typography } from "@mui/material";
 import AddHabitForm from "./Components/add-habit-form.tsx";
 import HabitList from "./Components/habit-list.tsx";
+import HabitStats from "./Components/habit-stats.tsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </Typography>
         <AddHabitForm />
         <HabitList />
+        <HabitStats />
       </Container>
     </Provider>
   );
