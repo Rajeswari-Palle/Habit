@@ -25,7 +25,8 @@ const HabitList: React.FC = () => {
     let streak = 0;
     const currentDate = new Date();
     while (true) {
-      const dateString = currentDate.toDateString().split("T")[0];
+      const dateString = currentDate.toISOString().split("T")[0];
+
       if (habit.completedDates.includes(dateString)) {
         streak++;
         currentDate.setDate(currentDate.getDate() - 1);
@@ -35,9 +36,7 @@ const HabitList: React.FC = () => {
     }
     return streak;
   };
-  const getLongestStreak = () => {
-    return Math.max(...habits.map(getStreak), 0);
-  };
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 4 }}>
       {habits.map((habit) => {
